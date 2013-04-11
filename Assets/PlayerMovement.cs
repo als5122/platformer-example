@@ -17,9 +17,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		movementVector.x = Input.GetAxis("Horizontal") * horizontalMovementSpeed;
-		movementVector.y = -gravity;
-		movementVector.z = 0;
+		movementVector = new Vector3(Input.GetAxis("Horizontal") * horizontalMovementSpeed, -gravity, 0); 
 		
 		movementVector = movementVector * Time.deltaTime;
 		characterController.Move(movementVector);
